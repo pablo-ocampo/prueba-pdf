@@ -1,0 +1,56 @@
+<mvc:View controllerName="pdf.prueba.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:u="sap.ui.unified"
+	xmlns:form="sap.ui.layout.form">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox>
+							<form:SimpleForm id="SimpleFormToolbar"
+								editable="true"
+								layout="ResponsiveGridLayout"
+								labelSpanXL="2"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="1"
+								emptySpanL="1"
+								emptySpanM="1"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false"
+								ariaLabelledBy="Title1" >
+								<form:toolbar>
+									<Toolbar id="TB1">
+										<Title id="Title1" text="Ingrese datos de la factura"/>
+									</Toolbar>
+								</form:toolbar>
+								<form:content >
+									<Label text="Archivo (pdf)"/>
+									<u:FileUploader
+									id="fileUploader"
+									name="uploader"
+									uploadUrl="upload/"
+									iconOnly="true"
+									icon="sap-icon://pdf-attachment"
+									tooltip="Dale subi algo pa"
+									uploadComplete="onUpload"
+									change="onUpload"
+									typeMissmatch="handleTypeMissmatch"
+									style="Emphasized"
+									fileType="pdf"
+									placeholder="Dame un pdf">
+									</u:FileUploader>
+								</form:content>
+							</form:SimpleForm>
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
